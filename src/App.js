@@ -9,6 +9,7 @@ var discard = [];
 
 export default function App() {
   let [turn, setTurn] = useState(0);
+  let tur = ((turn % 4) + 4) % 4;
   console.log(gameDeal);
 
   if (gameDeal[4].length === 0) {
@@ -16,12 +17,16 @@ export default function App() {
     discard = [];
   }
 
-  if (gameDeal[turn].length === 0) {
+  if (gameDeal[tur].length === 0) {
     return <h1>Player {turn} wins</h1>;
   }
 
   return (
     <div className="App">
+      <img
+        height="300"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/UNO_Logo.svg/1200px-UNO_Logo.svg.png"
+      />
       <h1>Current turn: Player {turn + 1}</h1>
       <h1>Player {turn + 1}'s Hand:</h1>
       {gameDeal[turn].map((c, i) => (
@@ -36,7 +41,7 @@ export default function App() {
       ))}
 
       <h1>Top Card</h1>
-      <div>
+      <div class="top" width="0px" style={{ background: topC.color }}>
         {topC.color} {topC.num}
       </div>
       <h1>Can't play?</h1>
@@ -55,7 +60,9 @@ function Cards(props) {
 
   return (
     <button
-      style={{ background: CardColor }}
+      style={{ boxShadow: "0 5px 4px 0 " + CardColor + "" }}
+      class="btn"
+      id="bt"
       disabled={props.color !== topC.color && props.num !== topC.num}
       onClick={() => {
         dealDiscard(topC);
@@ -121,6 +128,7 @@ function Draw(props) {
   return (
     <div>
       <button
+        class="draw"
         onClick={() => {
           dealDrawPile(props.pile, props.player);
           props.setTurn((props.turn + 1) % numPlayers);
