@@ -51,8 +51,11 @@ export default function App() {
 }
 
 function Cards(props) {
+  let CardColor = props.color;
+
   return (
     <button
+      style={{ background: CardColor }}
       disabled={props.color !== topC.color && props.num !== topC.num}
       onClick={() => {
         dealDiscard(topC);

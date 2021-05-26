@@ -2,3 +2,11 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+button {
+  padding: 10px;
+  margin: 30px;
+  cursor: url("https://picresize.com/images/rsz_162199984523159334.png"), auto;
+
+  transition: 100ms;
+}
