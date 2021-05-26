@@ -39,18 +39,22 @@ export default function App() {
           setTurn={setTurn}
         />
       ))}
-
-      <h1>Top Card</h1>
-      <div class="top" width="0px" style={{ background: topC.color }}>
-        {topC.color} {topC.num}
+      <div class="bottom">
+        <h1>Top Card</h1>
+        <h1>Can't play?</h1>
       </div>
-      <h1>Can't play?</h1>
-      <Draw
-        pile={gameDeal[4]}
-        player={gameDeal[turn]}
-        setTurn={setTurn}
-        turn={turn}
-      />
+
+      <div class="bottom1">
+        <div class="top" width="0px" style={{ background: topC.color }}>
+          {topC.color} {topC.num}
+        </div>
+        <Draw
+          pile={gameDeal[4]}
+          player={gameDeal[turn]}
+          setTurn={setTurn}
+          turn={turn}
+        />
+      </div>
     </div>
   );
 }

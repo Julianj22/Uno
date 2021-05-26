@@ -63,8 +63,19 @@ h1 {
 }
 
 .top {
-  font-size: 20px;
+  font-size: 50px;
   display: inline-block;
-
+  color: white;
   font-weight: bold;
+}
+
+.top:hover {
+  color: black;
+}
+
+.bottom,
+.bottom1 {
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
 }
