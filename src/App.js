@@ -12,13 +12,40 @@ export default function App() {
   let tur = ((turn % 4) + 4) % 4;
   console.log(gameDeal);
 
+  let congrats = [
+    " didn't lose!",
+    " is good at something!",
+    ", everyone is so proud of you...",
+    " wins! Kind of. This is just a browser game, relax."
+  ];
+
+  let w = Math.floor(Math.random() * congrats.length);
   if (gameDeal[4].length === 0) {
     gameDeal[4] = discard;
     discard = [];
   }
 
+  function locationreload() {
+    location.reload();
+  }
+
   if (gameDeal[tur].length === 0) {
-    return <h1>Player {turn} wins</h1>;
+    return (
+      <div class="winn">
+        <h1 class="win">
+          Player {tur + 1}
+          {congrats[w]}
+        </h1>
+        <button
+          class="wn"
+          onClick={() => {
+            locationreload();
+          }}
+        >
+          restart
+        </button>
+      </div>
+    );
   }
 
   return (

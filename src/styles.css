@@ -1,3 +1,7 @@
+html {
+  zoom: 50%;
+}
+
 .App {
   font-family: Ubuntu;
   text-align: center;
@@ -6,7 +10,8 @@
 h1 {
   font-size: 50px;
 }
-.draw {
+.draw,
+.wn {
   display: inline-block;
   padding: 15px 25px;
   font-size: 24px;
@@ -27,7 +32,19 @@ h1 {
     auto;
 }
 
+.wn:hover {
+  background-color: #5f0c0c;
+  cursor: url("https://cdn.discordapp.com/attachments/793662584784027698/847155136320897104/rsz_162199984523159334.png"),
+    auto;
+}
+
 .draw:active {
+  background-color: #5f0c0c;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.wn:active {
   background-color: #5f0c0c;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
@@ -78,4 +95,16 @@ h1 {
   display: flex;
   padding: 20px;
   justify-content: space-around;
+}
+
+.win {
+  color: rgb(235, 84, 109);
+
+  text-align: center;
+  margin-top: 200px;
+  font-size: 200px;
+}
+
+.winn {
+  text-align: center;
 }
