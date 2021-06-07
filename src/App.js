@@ -12,12 +12,7 @@ export default function App() {
   let tur = ((turn % 4) + 4) % 4;
   console.log(gameDeal);
 
-  let congrats = [
-    " didn't lose!",
-    " is good at something!",
-    ", everyone is so proud of you...",
-    " wins! Kind of. This is just a browser game, relax."
-  ];
+  let congrats = [" didn't lose!", " won!", ", won... bragging rights!"];
 
   let w = Math.floor(Math.random() * congrats.length);
   if (gameDeal[4].length === 0) {
